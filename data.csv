@@ -1,5 +1,5 @@
 ,startup_id,Startup Name,Founding Date,City,Industry/Vertical,Sub-Vertical,Founders,Investors,Amount(in USD),Investment Stage,_source_file,_source_year,_source_month,_country,_continent
-0,S1155,Qin1,,Noida,Edtech,NoidaEdtechIt is alearning platform for kids in the age group 5 to 14 yrs,"Ishan Gupta, Aarti Gupta",Venture Catalysts,,Undisclosed,apr_2020.csv,2020,4.0,India,Asia
+0,S1155,Qin1,,Noida,Edtech,It is alearning platform for kids in the age group 5 to 14 yrs,"Ishan Gupta, Aarti Gupta",Venture Catalysts,,Undisclosed,apr_2020.csv,2020,4.0,India,Asia
 1,S0865,MYSUN,2015.0,Delhi,Tech,Platform for rooftop solar energy solutions,"Gagan Vermani, Divyanshu Sachdev, Gyan Prakash Tiwari",Undisclosed,4257000.0,Pre series A,apr_2020.csv,2020,4.0,India,Asia
 2,S1280,ShopX,2015.0,Bangalore,Ecommerce,B2B retail operating system,"Amit Sharma, Apoorva Jois",Li and Fung,1410000.0,,apr_2020.csv,2020,4.0,India,Asia
 3,S1251,Sarva,,,Yoga & wellness,It drives a cultural change in making yoga-based wellness a part of modern lifestyle,Sarvesh Shashi,"Mantra Capital, Patni Family",,,apr_2020.csv,2020,4.0,,
