@@ -87,7 +87,9 @@ def detect_entity(name):
 def lookup_entity(entity_name: str) -> str:
     """Check if a startup, founder, investor, or sub-vertical exists in the dataset.
     Always call this first when the user asks about a specific entity by name.
-
+    Returns:
+    - FOUND: entity data from the dataset
+    - NOT FOUND: you MUST then call web_search
     Args:
         entity_name: Name to look up (e.g. "Razorpay", "Kunal Shah", "Sequoia")
     """
@@ -97,15 +99,15 @@ def lookup_entity(entity_name: str) -> str:
 
 class AnalyzeArgs(BaseModel):
     operation: str = Field(description="One of: top, bottom, group, filter, count, sum, unique, trend, investor_network, landscape, crosstab, stats")
-    column: Optional[str] = Field(default=None, description="Column to operate on. Use 'Amount(in USD)' for numeric ops.")
+    column: Optional[str] = Field(default=None, description="Column to operate on. Use 'Amount(in USD)' for numeric ops. Use category columns for count/unique/crosstab. Not needed for filter/landscape/stats.")
     group_by: Optional[str] = Field(default=None, description="Column to group by (for group, trend, crosstab)")
     filters: Optional[list] = Field(
         default=None,
-        description="List of filter dicts. One dict=AND, multiple dicts=OR. String=contains, number=exact, list=OR, dict{min/max/gt/lt}=range, dict{not: val}=negation."
+        description="List of filter dicts. One dict=AND, multiple dicts=OR. String=contains, number=exact, list=OR, dict{min/max/gt/lt}=range, dict{not: val}=negation. e.g. [{'City':'Bangalore','_source_year':2021}]"
     )
     top_n: Optional[int] = Field(default=10, description="Number of results to return")
-    sort_by: Optional[str] = Field(default=None, description="Sort by: 'total', 'count', or 'average'")
-    ascending: Optional[bool] = Field(default=False, description="Sort direction")
+    sort_by: Optional[str] = Field(default=None, description="Sort by: 'total', 'count', or 'average'. Default: 'total")
+    ascending: Optional[bool] = Field(default=False, description=""Sort ascending (True) or descending (False). Default: False")
 
 
 def _apply_filters(result_df, filters, allowed_cols):
@@ -120,7 +122,7 @@ def _apply_filters(result_df, filters, allowed_cols):
             if k not in allowed_cols:
                 continue
 
-            # negation
+            # 1. Negation: {"City": {"not": "Mumbai"}}
             if isinstance(v, dict) and "not" in v:
                 neg_val = v["not"]
                 if isinstance(neg_val, list):
@@ -131,7 +133,7 @@ def _apply_filters(result_df, filters, allowed_cols):
                 else:
                     mask &= ~result_df[k].astype(str).str.contains(neg_val, case=False, na=False)
 
-            # numeric range
+            # 2. Numeric range: {"min": 50M, "max": 100M, "gt": 10M, "lt": 50M}
             elif isinstance(v, dict) and any(op in v for op in ("min", "max", "gt", "lt")):
                 if not pd.api.types.is_numeric_dtype(result_df[k]):
                     return f"Cannot apply range filter: '{k}' is not numeric."
@@ -147,7 +149,7 @@ def _apply_filters(result_df, filters, allowed_cols):
                 if "lt" in v:
                     mask &= result_df[k] < v["lt"]
 
-            # item count (founders/investors)
+            # 3. Item count: {"Founders": {"min_items": 3}}
             elif isinstance(v, dict) and any(op in v for op in ("min_items", "max_items")):
                 if k not in ("Investors", "Founders"):
                     return f"min_items/max_items only works on Investors or Founders, not '{k}'"
@@ -159,7 +161,7 @@ def _apply_filters(result_df, filters, allowed_cols):
                 if "max_items" in v:
                     mask &= item_counts <= v["max_items"]
 
-            # string length
+            # 4. String length: {"Startup Name": {"min_len": 4}}
             elif isinstance(v, dict) and any(op in v for op in ("min_len", "max_len")):
                 str_lens = result_df[k].fillna("").astype(str).str.len()
                 if "min_len" in v:
@@ -167,7 +169,7 @@ def _apply_filters(result_df, filters, allowed_cols):
                 if "max_len" in v:
                     mask &= str_lens <= v["max_len"]
 
-            # starts/ends with
+            # 5. Starts/ends with: {"Startup Name": {"starts_with": "A"}}
             elif isinstance(v, dict) and any(op in v for op in ("starts_with", "ends_with")):
                 col_str = result_df[k].fillna("").astype(str)
                 if "starts_with" in v:
@@ -175,25 +177,25 @@ def _apply_filters(result_df, filters, allowed_cols):
                 if "ends_with" in v:
                     mask &= col_str.str.lower().str.endswith(v["ends_with"].lower())
 
-            # exact match
+            # 6. Exact match: {"City": {"exact": "New Delhi"}}
             elif isinstance(v, dict) and "exact" in v:
                 mask &= result_df[k].fillna("").astype(str).str.lower() == v["exact"].lower()
 
-            # unknown dict
+            # 7. Unknown dict → error
             elif isinstance(v, dict):
                 return f"Unsupported filter for '{k}': {v}"
 
-            # OR list
+            # 8. OR list: ["Bangalore", "Mumbai"]
             elif isinstance(v, list):
                 mask &= result_df[k].astype(str).str.contains(
                     "|".join(str(x) for x in v), case=False, na=False
                 )
 
-            # numeric exact
+            # 9. Numeric exact: 2021
             elif isinstance(v, (int, float)):
                 mask &= result_df[k] == v
 
-            # string contains
+            # 10. String contains: "Bangalore"
             else:
                 mask &= result_df[k].astype(str).str.contains(str(v), case=False, na=False)
 
@@ -514,16 +516,39 @@ def analyze_dataset_function(operation, column=None, group_by=None,
 @tool(args_schema=AnalyzeArgs)
 def analyze_dataset(operation, column=None, group_by=None,
                     filters=None, top_n=10, sort_by=None, ascending=False) -> str:
-    """Analyze startup funding data. Safe structured queries, no code execution.
-
+    """Analyze startup funding data. Safe structured queries — no code execution.
     Args:
-        operation: top, bottom, group, filter, count, sum, unique, trend, investor_network, landscape, crosstab, stats
-        column: column to analyze (not needed for filter/landscape/stats)
-        group_by: column to group by (for group, trend, crosstab)
-        filters: list of filter dicts. One dict = AND, multiple dicts = OR.
-        top_n: number of results (default 10)
-        sort_by: 'total', 'count', or 'average'
-        ascending: sort direction (default False)
+        Operations:
+            - top: Largest N by column → "Top 5 funded deals"
+            - bottom: Smallest N by column → "Least funded deals"
+            - group: Aggregate by category → "Funding by industry" / "Compare 2020 vs 2021"
+            - filter: Find matching rows → "FinTech startups in Bangalore"
+            - count: Value frequency → "Deals per investment stage"
+            - sum: Total across dataset → "Total capital deployed"
+            - unique: Distinct values → "How many unique investors?"
+            - trend: Time-based trend → "Monthly funding trend"
+            - investor_network: Investor activity → "Most active investors"
+            - landscape: Full market map (no column needed) → "Map the FinTech landscape"
+            - crosstab: Cross-column analysis → "Which cities dominate which sectors?"
+            - stats: Advanced statistics (no column needed) → "What % of deals are FinTech?"
+        column: Column to analyze (not required for filter/landscape/stats)
+        group_by: Column to group by (for group, trend, crosstab)
+        Filters: list of dicts. One dict=AND, multiple dicts=OR.
+            contains:      {"City": "Bangalore"}
+            exact:         {"City": {"exact": "New Delhi"}}
+            negation:      {"City": {"not": "Mumbai"}}
+            negation list: {"City": {"not": ["Mumbai", "Delhi"]}}
+            OR list:       {"City": ["Bangalore", "Mumbai"]}
+            numeric exact: {"_source_year": 2021}
+            numeric range: {"Amount(in USD)": {"min": 1000000, "max": 50000000}}
+            range ops:     {"Amount(in USD)": {"gt": 10000000, "lt": 50000000}}
+            item count:    {"Founders": {"min_items": 3}}
+            string length: {"Startup Name": {"min_len": 4}}
+            starts with:   {"Startup Name": {"starts_with": "A"}}
+            ends with:     {"Industry/Vertical": {"ends_with": "Tech"}}  
+        top_n: Number of results (default 10)
+        sort_by: Sort by 'total', 'count', or 'average'
+        ascending: Sort ascending (True) or descending (False)
     """
     result = analyze_dataset_function(operation, column, group_by, filters, ascending, sort_by, top_n)
     return _truncate(result)
@@ -535,10 +560,13 @@ _ddg = DuckDuckGoSearchRun()
 @tool
 def web_search(query: str) -> str:
     """Search the web for info not in the dataset.
-    Use after lookup_entity returns NOT FOUND.
+    Use after lookup_entity returns NOT FOUND,, or for:
+    - Recent news, valuations, funding rounds
+    - Competitive landscape
+    - Any entity not in the dataset
 
     Args:
-        query: search query (e.g. "Razorpay latest funding round")
+        query: Search query (e.g. "Razorpay latest funding round valuation")
     """
     try:
         return _ddg.run(query)[:4000]
@@ -617,6 +645,7 @@ Examples -- Industries: {_industries} | Cities: {_cities} | Stages: {_stages}
    - "What % of deals are FinTech?" -> operation="stats", filters=[{"Industry/Vertical": "FinTech"}]
    - "Startups in Europe" -> operation="filter", filters=[{"_continent": "Europe"}]
    - "Non-Indian startups" -> operation="filter", filters=[{"_country": {"not": "India"}}]
+   - "Total raised by CRED" → lookup_entity("CRED") → FOUND → analyze_dataset(operation="sum", column="Amount(in USD)", filters=[{"Startup Name": "CRED"}])
    - Tag [Source: Dataset]
 
 3. **web_search** -- for info NOT in dataset
@@ -627,8 +656,10 @@ Examples -- Industries: {_industries} | Cities: {_cities} | Stages: {_stages}
 - You are ONLY a Financial Intelligence Research Agent for Private Equity analysts.
 - Dataset covers startup funding records from 2020-2021.
 - ONLY answer questions related to startups, funding, investors, industries, market mapping, and due diligence.
-- If user asks about a startup NOT in the dataset, say so and use web_search for context.
-- If the user asks about anything unrelated, politely decline and redirect.
+- If user asks about a startup ,founder, investor, or sub-vertical NOT in the dataset:
+  - Say "X is not in our dataset (2020-2021)"
+  - Use web_search for brief context if relevant to PE landscape
+- If the user asks about anything unrelated (sports, celebrities, general knowledge, etc.), politely decline and redirect.
 
 ## Rules
 - ALWAYS tag: [Source: Dataset] or [Source: External]
@@ -636,7 +667,7 @@ Examples -- Industries: {_industries} | Cities: {_cities} | Stages: {_stages}
 - Format amounts: $15M not 15000000
 - NEVER use HTML tags. Use plain text only.
 - Do not invent facts. If you cannot verify, say so.
-- Always include actual values from tools. Never respond with generic filler.
+- OUTPUT RULE: Always include actual values from tools. Never respond with generic filler.
 - Use ONE tool call per question when possible.
 - Be concise, analytical -- write like a PE research analyst
 """
