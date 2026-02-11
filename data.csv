@@ -1,8 +1,8 @@
 ,startup_id,Startup Name,Founding Date,City,Industry/Vertical,Sub-Vertical,Founders,Investors,Amount(in USD),Investment Stage,_source_file,_source_year,_source_month,_country,_continent
 0,S1155,Qin1,2019,Noida,Edtech,It is alearning platform for kids in the age group 5 to 14 yrs,"Ishan Gupta, Aarti Gupta",Venture Catalysts,,,apr_2020.csv,2020,4.0,India,Asia
 1,S0865,MYSUN,2015,Delhi,Tech,Platform for rooftop solar energy solutions,"Gagan Vermani, Divyanshu Sachdev, Gyan Prakash Tiwari",,4257000.0,Pre series A,apr_2020.csv,2020,4.0,India,Asia
-2,S1280,ShopX,2015,Bangalore,E-commerce,B2B retail operating system,"Amit Sharma, Apoorva Jois",Li and Fung,1410000.0,Undisclosed,apr_2020.csv,2020,4.0,India,Asia
-3,S1251,Sarva,2013,,Yoga & wellness,It drives a cultural change in making yoga-based wellness a part of modern lifestyle,Sarvesh Shashi,"Mantra Capital, Patni Family",,Undisclosed,apr_2020.csv,2020,4.0,,
+2,S1280,ShopX,2015,Bangalore,E-commerce,B2B retail operating system,"Amit Sharma, Apoorva Jois",Li and Fung,1410000.0,,apr_2020.csv,2020,4.0,India,Asia
+3,S1251,Sarva,2013,,Yoga & wellness,It drives a cultural change in making yoga-based wellness a part of modern lifestyle,Sarvesh Shashi,"Mantra Capital, Patni Family",,,apr_2020.csv,2020,4.0,,
 4,S0460,Expertrons,2019,Mumbai,AI,AI video bot platform for career hacks,"Vivek Gupta, Jatin Solanki","Nikhil Vora, Iceland Venture Studio, LetsVenture, Samyakth Capital",,Seed Round,apr_2020.csv,2020,4.0,India,Asia
 5,S0977,NewsBytes,2013,Gurugram,Digital Media,News portal,"Romesh Khaddar, Shikha Chaudhry, Sumedh Chaudhry",North Base Media,1500000.0,Series A,apr_2020.csv,2020,4.0,India,Asia
 6,S1558,Wagonfly,2018,Bangalore,,Contactless shopping and delivery experience by using radio frequency to tag retail items,Raghavendra Prasad,Investment Trust of India,500000.0,,apr_2020.csv,2020,4.0,India,Asia
