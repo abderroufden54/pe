@@ -1,6 +1,6 @@
 ,startup_id,Startup Name,Founding Date,City,Industry/Vertical,Sub-Vertical,Founders,Investors,Amount(in USD),Investment Stage,_source_file,_source_year,_source_month,_country,_continent
-0,S1155,Qin1,2019,Noida,Edtech,It is alearning platform for kids in the age group 5 to 14 yrs,"Ishan Gupta, Aarti Gupta",Venture Catalysts,,Undisclosed,apr_2020.csv,2020,4.0,India,Asia
-1,S0865,MYSUN,2015,Delhi,Tech,Platform for rooftop solar energy solutions,"Gagan Vermani, Divyanshu Sachdev, Gyan Prakash Tiwari",Undisclosed,4257000.0,Pre series A,apr_2020.csv,2020,4.0,India,Asia
+0,S1155,Qin1,2019,Noida,Edtech,It is alearning platform for kids in the age group 5 to 14 yrs,"Ishan Gupta, Aarti Gupta",Venture Catalysts,,,apr_2020.csv,2020,4.0,India,Asia
+1,S0865,MYSUN,2015,Delhi,Tech,Platform for rooftop solar energy solutions,"Gagan Vermani, Divyanshu Sachdev, Gyan Prakash Tiwari",,4257000.0,Pre series A,apr_2020.csv,2020,4.0,India,Asia
 2,S1280,ShopX,2015,Bangalore,E-commerce,B2B retail operating system,"Amit Sharma, Apoorva Jois",Li and Fung,1410000.0,,apr_2020.csv,2020,4.0,India,Asia
 3,S1251,Sarva,2013,,Yoga & wellness,It drives a cultural change in making yoga-based wellness a part of modern lifestyle,Sarvesh Shashi,"Mantra Capital, Patni Family",,,apr_2020.csv,2020,4.0,,
 4,S0460,Expertrons,2019,Mumbai,AI,AI video bot platform for career hacks,"Vivek Gupta, Jatin Solanki","Nikhil Vora, Iceland Venture Studio, LetsVenture, Samyakth Capital",,Seed Round,apr_2020.csv,2020,4.0,India,Asia
@@ -43,7 +43,7 @@
 41,S0502,Fingerlix,2016,,Food,"It provides ready-to-cook products such as batters, mixes, curries, dals, parathas etc.,","Shrikrishna Bharambe, Shripad Nadkarni, Varun Khanna, Abhijit Berde","Accel, Zephyr Peacock, Swiggy, RB Investments.",1834000.0,,apr_2020.csv,2020,4.0,,
 42,S1647,Zupee,2018,,Gaming,It runs live quiz tournaments on its app.,"Malhi, Siddhant Saurabh",Matrix Partners,8000000.0,Series A,apr_2020.csv,2020,4.0,,
 43,S0833,Lido Learning,2019,Mumbai,Edtech,Online teaching service,Sahil Sheth,Bace Capital,7500000.0,Series B,apr_2020.csv,2020,4.0,India,Asia
-44,S0120,Aye Finance,2014,Gurugram,Fintech,A finance lender to SMEs,"Vikram Jetley, Sanjay Sharma",Undisclosed,23850000.0,,apr_2020.csv,2020,4.0,India,Asia
+44,S0120,Aye Finance,2014,Gurugram,Fintech,A finance lender to SMEs,"Vikram Jetley, Sanjay Sharma",,23850000.0,,apr_2020.csv,2020,4.0,India,Asia
 45,S1392,Swiggy,2014,Bangalore,Foodtech,Platform to order food online from restaurants and getting it delievered,"Nandan Reddy, Sriharsha Majety, Rahul Jaimini","Tencent, Ark Impact, Korea Investment Partners, Samsung Ventures, Mirae Asset Capital Markets",43000000.0,Series A,apr_2020.csv,2020,4.0,India,Asia
 46,S1640,Zomato,2008,Gurugram,Foodtech,Online food delivery and restaurant discovery platform,Deepinder Goyal,Pacific Horizon,5000000.0,,apr_2020.csv,2020,4.0,India,Asia
 47,S1174,RaRa Delivery,2017,,Logistics,Provides same day delivery service for e-commerce businesses,Karan Bhardwaj,"Der Shing Lim, 500 startups",800000.0,Seed Round,apr_2020.csv,2020,4.0,,
@@ -242,7 +242,7 @@
 240,S1649,Zvesta,2015,Gurugram,Proptech,An online platform where users can search and buy properties listed by developers and brokers,"Rajan Dang, Anushree Srivastava",Hindustan Media Ventures,5500000.0,,feb_2020.csv,2020,2.0,India,Asia
 241,S0396,Dunzo,2014,Bangalore,Logistics,India-based hyperlocal delivery startup,Kabeer Biswas,Alteria Capital,11000000.0,,feb_2020.csv,2020,2.0,India,Asia
 242,S0373,Digit Insurance,2016,Bangalore,Insurtech,General Insurance Company,Kamesh Goyal,"Virat Kohli, Anushka Sharma",340000.0,,feb_2020.csv,2020,2.0,India,Asia
-243,S1614,Yolo,2019,Gurugram,Transport,Intercity transportation,"Shailesh Gupta, Mukul Shah, Danish Chopra",Undisclosed,600000.0,Seed Funding,feb_2020.csv,2020,2.0,India,Asia
+243,S1614,Yolo,2019,Gurugram,Transport,Intercity transportation,"Shailesh Gupta, Mukul Shah, Danish Chopra",,600000.0,Seed Funding,feb_2020.csv,2020,2.0,India,Asia
 244,S1313,SmartVizX,2015,,VR & SaaS,It developed India’s first VR-based design communication and collaboration product Trezi,"Tithi Tewari, Gautam Tewari",Rockstud Capital,1397000.0,Pre series A,feb_2020.csv,2020,2.0,,
 245,S0235,Carbon Clean,2009,,Cleantech,Develops affordable carbon capture technology,"Aniruddha Sharma, Prateek Bumb","WAVE Equity Partners, Chevron Technology Ventures, Marubeni Corporation.",16000000.0,,feb_2020.csv,2020,2.0,,
 246,S0570,Genius Corner,2014,Noida,Edtech,Framework to enable personalised learning using artificial intelligence (AI) and machine learning (ML).,"Vishal Khatter, Dheeraj Khatter, Dipak Varshney","Mahesh Mohta, Jyoti Arora, Nachu Subramanian, Srivats",250000.0,,feb_2020.csv,2020,2.0,India,Asia
@@ -291,7 +291,7 @@
 289,S1169,RACEnergy,2018,,E-mobility,It builds electric vehicles and supporting infrastructure,"Arun Sreyas Reddy, Gautham Maheswaran","GrowX ventures, Prophetic Ventures",,Seed Round,jan_2020.csv,2020,1.0,,
 290,S0151,BharatPe,2018,Delhi,Fintech,Digital payments platform,Ashneer Grover,Coatue Management,100000000.0,,jan_2020.csv,2020,1.0,India,Asia
 291,S1550,Vogo,2016,Bangalore,Automotive,A scooter-sharing platform allowing users to rent a two-wheeler from specific designated pick up points,"Anand Ayyadurai, Padmanabhan Balakrishnan, Sanchit Mittal",Lightstone Aspada,35000000.0,Series C,jan_2020.csv,2020,1.0,India,Asia
-292,S1614,Yolo,2019,Gurugram,Transport,Intercity transportation startup,"Shailesh Gupta, Mukul Shah, Danish Chopra",Undisclosed,600000.0,Seed Round,jan_2020.csv,2020,1.0,India,Asia
+292,S1614,Yolo,2019,Gurugram,Transport,Intercity transportation startup,"Shailesh Gupta, Mukul Shah, Danish Chopra",,600000.0,Seed Round,jan_2020.csv,2020,1.0,India,Asia
 293,S1503,Unotech,2011,Mumbai,SaaS,It develops fully-customisable open source software,Vikash Jha,Manish Choksi,2000000.0,,jan_2020.csv,2020,1.0,India,Asia
 294,S1629,Zetwerk,2018,Bangalore,Marketplace,B2B marketplace that connects manufacturing companies for industrial equipements,"Amrit Acharya, Srinath Ramakkrushnan, Vishal Chaudhary",InnoVen capital,2200000.0,,jan_2020.csv,2020,1.0,India,Asia
 295,S1589,WizKlub,2018,Bangalore,Edtech,Helps students solve problems at complex level,Amit Bansal,Incubate Fund India,982530.0,Seed Funding,jan_2020.csv,2020,1.0,India,Asia
@@ -323,11 +323,11 @@
 321,S0891,Medicus,,Mumbai,Healthtech,AI-based platform that explains and interprets blood tests and medical reports,"Bhavesh Shah, Manav Shah",Angel investors,12700.0,,jan_2020.csv,2020,1.0,India,Asia
 322,S0931,Monech,,Mumbai,Fintech,Automated platform which will help users to take their financial decisions,,Angel investors,12700.0,Seed Round,jan_2020.csv,2020,1.0,India,Asia
 323,S1413,Teach Us,,,Edtech,Educational portal which enables the students to access information related to education at one common platform,,Angel investors,12700.0,Seed Round,jan_2020.csv,2020,1.0,,
-324,S0356,Dealberg,,Bangalore,B2B marketplace,Deals in office supplies,Abhishek Emmanuel,Undisclosed,,,jan_2020.csv,2020,1.0,India,Asia
+324,S0356,Dealberg,,Bangalore,B2B marketplace,Deals in office supplies,Abhishek Emmanuel,,,,jan_2020.csv,2020,1.0,India,Asia
 325,S1082,Phenom People,2010,,HR tech,It redefines the means to search for a job and recruit top talent,Mahe Bayireddi,WestBridge Capital,30000000.0,Series C,jan_2020.csv,2020,1.0,,
 326,S0464,Extra Edge,,Pune,Edtech,Admission Marketing Automation software for the education industry,Kavita Dhillon,"Sprout Venture Partners, Indian Angel Network",700000.0,Pre series A,jan_2020.csv,2020,1.0,India,Asia
-327,S0231,Capital Quotient,2016,Bangalore,Fintech,Investment advisor,Sousthav Chakrabarty,Undisclosed,600000.0,,jan_2020.csv,2020,1.0,India,Asia
-328,S0754,Karfa,,Delhi,E-commerce,It sells products crafted by artisans,Kartikeya Goel,Undisclosed,25000.0,Seed Round,jan_2020.csv,2020,1.0,India,Asia
+327,S0231,Capital Quotient,2016,Bangalore,Fintech,Investment advisor,Sousthav Chakrabarty,,600000.0,,jan_2020.csv,2020,1.0,India,Asia
+328,S0754,Karfa,,Delhi,E-commerce,It sells products crafted by artisans,Kartikeya Goel,,25000.0,Seed Round,jan_2020.csv,2020,1.0,India,Asia
 329,S0195,Bounce,2014,Bangalore,Automotive and Rentals,Offers a variety of bikes and scooters that can be rented on a subscription basis,"Vivekananda Hallekere, Anil Giri Raju,Arun Agni","Accel Partners, B Capital",97500000.0,Series D,jan_2020.csv,2020,1.0,India,Asia
 330,S1635,Zinier,2015,Bangalore,Automation,Provides intelligent field service automation,Arka Dhar,ICONIQ Capital,90000000.0,Series C,jan_2020.csv,2020,1.0,India,Asia
 331,S1131,ProEves,2016,Delhi,Preschool Daycare,"Provides tech-enabled, end-to-end childcare support solutions for corporate and retail consumers","Divya Agarwal, Ketika Kapoor",1Crowd,507000.0,Seed Round,jan_2020.csv,2020,1.0,India,Asia
@@ -463,7 +463,7 @@
 461,S0914,Milk Mantra,2009,Odisha,Food,Produces Dairy Products,Srikumar Misra,US International Development Finance Corporation,10000000.0,,jun_2020.csv,2020,6.0,India,Asia
 462,S0949,Myglamm,2015,Mumbai,Beauty,On-demand beauty services provider,Darpan Sanghvi,"Tano India, L’Occitane, Bessemer",4327000.0,,jun_2020.csv,2020,6.0,India,Asia
 463,S0391,Drishti Technologies,,Bangalore,AI,"AI-based video analytics, data, and insights bring benefits to manufacturers",Prasad Akella,Sozo Ventures,25000000.0,Series B,jun_2020.csv,2020,6.0,India,Asia
-464,S0715,Instasolv,2019,Noida,Edtech,It is a doubt-solving app for students from Class 6 to 12,"Aditya Singhal, Nishant Sinha, Bahul Arora",Undisclosed,2000000.0,Pre series A,jun_2020.csv,2020,6.0,India,Asia
+464,S0715,Instasolv,2019,Noida,Edtech,It is a doubt-solving app for students from Class 6 to 12,"Aditya Singhal, Nishant Sinha, Bahul Arora",,2000000.0,Pre series A,jun_2020.csv,2020,6.0,India,Asia
 465,S0598,GoldenPi,2017,Bangalore,Fintech,An online aggregator of bonds and debentures available in the secondary market,"Abhijit Roy, Samir Pratihar",Rainmatter Capital,459000.0,,jun_2020.csv,2020,6.0,India,Asia
 466,S1251,Sarva,,Mumbai,Yoga & wellness,It drives a cultural change in making yoga-based wellness a part of modern lifestyle,Sarvesh Shashi,Shikhar Dhawan,,,jun_2020.csv,2020,6.0,India,Asia
 467,S0729,Jai Kisan,2017,Mumbai,Fintech,A platform that caters the need of customers in rural areas,"Arjun Ahluwalia, Adriel Maniego","Arkam Ventures, Nabventures",3937000.0,Pre series A,jun_2020.csv,2020,6.0,India,Asia
@@ -505,7 +505,7 @@
 503,S0682,Imstrong,2019,Bangalore,Fitness,It is an online and live video-streaming platform that allows trainers and fitness enthusiasts to connect and engage in interactive online classes.,"Dilip Kumar, Selvan Thamarai, Deepti Nair",Rainmatter,400000.0,Seed round,mar_2020.csv,2020,3.0,India,Asia
 504,S0308,Craftsvilla,2011,Mumbai,Marketplace,Online marketplace for ethnic wear,"Manoj Gupta, Monica Gupta",Supera Investments,3900000.0,,mar_2020.csv,2020,3.0,India,Asia
 505,S1217,Rupifi,2020,Bangalore,Fintech,Offers financial products for SMEs,"Anubhav Jain, Ankit Singh, Jawaid Iqbal","Ashneer Grover, Kunal Shah, Ramakant Sharma",,Pre seed round,mar_2020.csv,2020,3.0,India,Asia
-506,S1318,SnackAmor,2017,Mumbai,Food,It offers various healthy snacks,Deepak Grover,Undisclosed,,Seed round,mar_2020.csv,2020,3.0,India,Asia
+506,S1318,SnackAmor,2017,Mumbai,Food,It offers various healthy snacks,Deepak Grover,,,Seed round,mar_2020.csv,2020,3.0,India,Asia
 507,S0288,CoinDCX,,,Fintech,A cryptocurrency trading platform,Sumit Gupta,"Polychain Capital, Bain Capital Ventures, HDR Group",3000000.0,Series A,mar_2020.csv,2020,3.0,,
 508,S0999,NuNu TV,,,Media,Kids-focussed Youtube channel,,Risers Accelerators,670000.0,,mar_2020.csv,2020,3.0,,
 509,S0458,Excess2Sell,,Mumbai,E-commerce,B2B Marketplace for Overstock & Surplus Inventory,Rajan Sharma,Gautham Madhavan,1000000.0,,mar_2020.csv,2020,3.0,India,Asia
