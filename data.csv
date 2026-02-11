@@ -1,8 +1,8 @@
 ,startup_id,Startup Name,Founding Date,City,Industry/Vertical,Sub-Vertical,Founders,Investors,Amount(in USD),Investment Stage,_source_file,_source_year,_source_month,_country,_continent
 0,S1155,Qin1,2019,Noida,Edtech,It is alearning platform for kids in the age group 5 to 14 yrs,"Ishan Gupta, Aarti Gupta",Venture Catalysts,,,apr_2020.csv,2020,4.0,India,Asia
 1,S0865,MYSUN,2015,Delhi,Tech,Platform for rooftop solar energy solutions,"Gagan Vermani, Divyanshu Sachdev, Gyan Prakash Tiwari",,4257000.0,Pre series A,apr_2020.csv,2020,4.0,India,Asia
-2,S1280,ShopX,2015,Bangalore,E-commerce,B2B retail operating system,"Amit Sharma, Apoorva Jois",Li and Fung,1410000.0,,apr_2020.csv,2020,4.0,India,Asia
-3,S1251,Sarva,2013,,Yoga & wellness,It drives a cultural change in making yoga-based wellness a part of modern lifestyle,Sarvesh Shashi,"Mantra Capital, Patni Family",,,apr_2020.csv,2020,4.0,,
+2,S1280,ShopX,2015,Bangalore,E-commerce,B2B retail operating system,"Amit Sharma, Apoorva Jois",Li and Fung,1410000.0,Undisclosed,apr_2020.csv,2020,4.0,India,Asia
+3,S1251,Sarva,2013,,Yoga & wellness,It drives a cultural change in making yoga-based wellness a part of modern lifestyle,Sarvesh Shashi,"Mantra Capital, Patni Family",,Undisclosed,apr_2020.csv,2020,4.0,,
 4,S0460,Expertrons,2019,Mumbai,AI,AI video bot platform for career hacks,"Vivek Gupta, Jatin Solanki","Nikhil Vora, Iceland Venture Studio, LetsVenture, Samyakth Capital",,Seed Round,apr_2020.csv,2020,4.0,India,Asia
 5,S0977,NewsBytes,2013,Gurugram,Digital Media,News portal,"Romesh Khaddar, Shikha Chaudhry, Sumedh Chaudhry",North Base Media,1500000.0,Series A,apr_2020.csv,2020,4.0,India,Asia
 6,S1558,Wagonfly,2018,Bangalore,,Contactless shopping and delivery experience by using radio frequency to tag retail items,Raghavendra Prasad,Investment Trust of India,500000.0,,apr_2020.csv,2020,4.0,India,Asia
@@ -686,7 +686,7 @@
 684,S1285,Signzy,2015,Bangalore,FinTech,It is creating 'building blocks for a Digital Trust system.,"Ankit Ratan, Ankur Pandey, Arpit Ratan","GenNext Ventures, Contrarian Drishti Partners",5400000.0,,oct_2020.csv,2020,10.0,India,Asia
 685,S0045,Ahaguru,2012,Chennai,Edtech,"It is conducting IIT JEE Coach for Physics, Math and Chemistry easily.","Gomathi S, Dr Balaji Sampath",Anand Mahindra,,Series A,oct_2020.csv,2020,10.0,India,Asia
 686,S1419,Tekion,2016,"San Ramon, California",AI,It is a cloud-built platform with advanced machine learning and AI capabilities for a personalized and seamless consumer experience.,"Guru Sankararaman, Jay Vijayan","Alliance Ventures, Storm Ventures",150000000.0,Series C,oct_2020.csv,2020,10.0,United States,North America
-687,S0203,Brighteye Ventures,2017,"Paris, Ile-de-France, France",Edtech,Education technology venture capital firm.,David guerin,Tandem,5400000.0,,oct_2020.csv,2020,10.0,France,Europe
+687,S0203,Brighteye Ventures,2017,"Paris,Ile-de-France",Edtech,Education technology venture capital firm.,David guerin,Tandem,5400000.0,,oct_2020.csv,2020,10.0,France,Europe
 688,S0467,EzeRx,2018,Kolkata,Medtech,Developer and manufacturer of medical devices,"Amit mandahar, Chaitali roy","Indian Oil Corporation, Krishna Chakravarty",200000.0,Seed,oct_2020.csv,2020,10.0,India,Asia
 689,S1547,VitalTech,2018,"Plano,Texas",HeathTech,"VitalTech is a develop technologies that empower patients to better care for their safety,",Anjan Panneer Selvam,Tech Mahindra,3000000.0,Seed,oct_2020.csv,2020,10.0,United States,North America
 690,S0571,Genius Teacher,2016,Mumbai,Edtech,"Genius Teacher creates engaging educational content, delivers fun learning experience to the students","Advitiya Sharma, Gaurav Lahoti","Whiteboard Capital, VKG Ventures LLP.",2000000.0,,oct_2020.csv,2020,10.0,India,Asia
