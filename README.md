@@ -82,7 +82,7 @@ pe-intelligence-agent/
 
 ## Dataset
 
-2,119 startup funding records (2020–2021) across 1,659 unique startups. Columns: Startup Name, Founding Date, City, Industry/Vertical, Sub-Vertical, Founders, Investors, Amount(in USD), Investment Stage, _country, _continent.
+2,119 startup funding records (2020–2021) across 1,659 unique startups. Columns: startup_id,Startup Name, Founding Date, City, Industry/Vertical, Sub-Vertical, Founders, Investors, Amount(in USD), Investment Stage, _country, _continent,_source_month,_source_year.
 
 ## Tools
 
